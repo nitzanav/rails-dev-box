@@ -5,7 +5,7 @@ Vagrant.configure('2') do |config|
   config.vm.hostname = 'rails-dev-box'
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000
-  config.vm.forward_port 9292, 9292
+  config.vm.network :forward_port, guest: 9292, host: 9292
 
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
 end
